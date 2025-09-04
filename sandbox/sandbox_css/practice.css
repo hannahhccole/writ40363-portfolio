@@ -1,0 +1,35 @@
+*{
+    border: 1px solid red;
+    }
+
+header {
+
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: 70vh; 
+    background-color: rgb(218, 198, 255);
+}
+
+.header_text {
+    background-color: rgb(41, 109, 212);
+    height: 50vh; 
+    width: 45%;
+
+}
+
+.header_pic {
+    background-color: rgb(41, 109, 212);
+    height: 50vh; 
+    width: 45%;
+}
+
+h1 {
+    color: #4d1979; 
+    background-color:rgb(255, 191, 217)
+}
+
+h2 {
+    color: #4d1979; 
+    background-color: rgb(170, 255, 255);
+}
