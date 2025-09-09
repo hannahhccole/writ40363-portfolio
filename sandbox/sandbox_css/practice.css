@@ -1,32 +1,83 @@
+
+/* The next lines override the broswer's margin and padding defaults */
+
+
 *{
-    border: 1px solid red;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     }
 
+body {
+   /* Font stack explanation:
+   - system-ui: Uses the OS default UI font (Segoe UI on Windows, San Francisco on Mac)
+   - -apple-system: Fallback for older Safari browswers
+   - sans-serif: Universal fallback if system fonts fail */
+    font-family: system-ui, -apple-system, sans-serif;
+   line-height: 1.6;
+   color: #333; 
+}
+nav {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e9ecef; 
+}
 header {
 
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     gap: 2rem;
     height: 70vh; 
-    background-color: rgb(218, 198, 255);
-}
+    background-color: rgb(218, 198, 255); */
+
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    height: 60vh;
+    background-color: #f8f9fa 
+
+} 
+
+
 
 .header_text {
     background-color: rgb(41, 109, 212);
-    height: 50vh; 
-    width: 45%;
-
+    flex: 1;
+    padding: 2rem; 
 }
 
 .header_pic {
-    background-color: rgb(41, 109, 212);
-    height: 50vh; 
-    width: 45%;
+    flex: 1;
+    background-color: #e9ecef;
+    min-height: 300px;
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: #6c757d; 
+}
+
+main {
+    max-width: 100ch;
+    margin: 0 auto;
+    padding: 5%; 
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+p + p {
+    margin-top: 1rem;
 }
 
 h1 {
     color: #4d1979; 
-    background-color:rgb(255, 191, 217)
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2; 
 }
 
 h2 {
