@@ -51,7 +51,7 @@ header {
 
 
 .header_text {
-    background-color: rgb(41, 109, 212);
+    background-color: rgb(255, 217, 239);
     flex: 1;
     padding: 2rem; 
 }
@@ -67,10 +67,65 @@ header {
     color: #6c757d; 
 }
 
+.header_pic img{
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 main {
     max-width: 100ch;
     margin: 0 auto;
     padding: 5%; 
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 0;
+    align-items: center; 
+}
+
+.about-image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 250px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center; 
+}
+
+.skill-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem; 
 }
 
 section {
