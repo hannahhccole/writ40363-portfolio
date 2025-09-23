@@ -4,71 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-    <body>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Hannah Cole</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <header>
-        <nav> 
-            <div>
-                <a href="index.html"> Home</a> | <a href="about.html">About</a> </nav></header>
-            </div>
 
-            <div>
-                <a href="#featuredwork">Skip to Featured Work</a>
-                <a href="#currentlearning">Skip to Current Learning</a>
-                <a href="#resources">Skip to Resources</a>
-            </div>
+        <div class="header_text">
+
+            <h1>Hannah Cole</h1>
+            <p>Web Designer</p>
+            <p>Creating artistic and functional websites</p>
+        </div>
+
+        <div class="header_pic">
+          <img src="../images/Hannah Cole Headshot 1 Crop.jpeg" alt="Hannah Cole professional headshot" />
+        </div>
+
+    </header>
+
     <main>
+   
 
-    <section>
-     <h1>Welcome to My Portfolio</h1> 
+    <section class="about-section" id="about">
+        <div class="about-image">
+            <img src="../images/IMG_2126.JPG" alt="Hannah Cole - Professional Photo">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>My name is Hannah Cole, and I am currently a student at Texas Christian University pursuing a double major in Digital Culture/Data Analytics (DCDA) and Theatre. I am currently located in Fort Worth, TX, for school, but I am originally from Virginia Beach, VA. As a double major in DCDA and Theatre, I hope to pursue careers in web design and performance post-grad. <p>
+            <p>I have a deep passion for the arts and have always loved performing. I have recently found interest in design, both online and in the theatre realm. When I’m not in a rehearsal or honing my web design skills, I enjoy journaling, embroidery, and exploring the DFW with friends. I love finding artistic things to do and learn that are totally separate from the careers I am pursuing. It allows me to have a great work/life balance and still be creative!  </p>
+        </div>
+    </section>
 
-        <figure align="center">
+    <section class="skills-section" id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+        <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, learning Javascript</p>
+        </div>
+        <div class="skill-card">
+            <h3>Design</h3>
+            <p>Visual design, user experience</p>
+        </div>
+        <div class="skill-card">
+            <h3>Tools</h3>
+            <p>VS Code, GitHub</p>
+        </div>
+        <div class="skill-card">
+            <h3>Communication</h3>
+            <p>problem-solving, adaptable, creative</p>
+        </div>
+    </div>
+    </section>
 
-          <img src="images/KBT_4210.jpg" alt="Professional headshot of Hannah Cole from 2025" width="100%"
+    <section class="projects-section" id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <article class="project-card">
+                <div class="project-content">
+                    <h3>Class Website Project</h3>
+                    <p>A simple website I built using HTML and CSS for this class.</p>
+                    <p><strong>Skills used:</strong> HTML, CSS, Flexbox</p>
+                </div>
+            </article>
 
-        <figurecaption>Hannah Cole, Theatre and DCDA Student at TCU</figurecaption>
+            <article class="project-card">
+                <div class="project-content">
+                    <h3>Portfolio Planning</h3>
+                    <p>Research and planning for my personal portfolio website.</p>
+                    <p><strong>Skills used:</strong> Research, planning, design thinking.</p>
+                </div>
+            </article>
 
-        </figure>
-
-   <p>My name is Hannah Cole, and this is my introduction! Here is a little bit about me and my future aspirations! I'm a double major in Theatre and Digital Culture/Data Analytics, hoping to one day pursue careers as a performer/choreographer and web designer.</p>
-
-<p>This is a link to <a href="https://www.tcu.edu" target="_blank">my employer's website</a></p>
-
-</section>
-
-<section>
-<h2 id="featuredwork">Featured Work</h2>
-
-<!--candidate for CSS background-->
-
-
-    <img src="images/download (1).jpg" width="100%">
-
-
-</section>   
-<p>So far, my employment opportunities have included being an assistant in ballet and acting classes for children, a camp counselor for a showchoir summer camp, and a lifeguard at a country club. Though each of these jobs are very different, all required me to interact with others in various capacities, including follow directions of a supervisor as well as serving as a mentor to those younger than me. </p>
-
-</section>
-
-<section>
-<h2 id="currentlearning">Current Learning</h2>
-<p>This semester, I am taking an Intro to Web Design course. So far, we are learning how to use HTML and organize files for that efficiently. HTML is the "backbone" of a website. It allows you to insert text, pictures, and links with a very basic format. However, soon we will be learning how to use CSS to enhance the layout of the page. </p>
-</section>
-
-<section>
-    <h2 id="resources">Resources</h2>
-        <p>
-            <a href="https://finearts.tcu.edu/theatre/" target="_blank">TheatreTCU page</a>
-            <a href="https://www.tcu.edu/academics/programs/digital-culture-data-analytics.php" target="_blank">TCU Digital Culture and Data Analytics page</a>
-            <a href="https://www.rpmdance.com/"target="_blank">rpm dance website (former employment)</a>
-        </p>
-</section>
-</main> 
-
-<footer>
-<p>&copy; 2025 [Hannah Cole] | WRIT40363 Portfolio</p>
-</footer>
-
+            <article class="project-card">
+                <div class="project-content">
+                    <h3>Future Project</h3>
+                    <p>A placeholder for a project I plan to build this semester.</p>
+                    <p><strong>Skills to learn:</strong> Javascript, responsive design.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+ </main>
 </body>
 </html>
