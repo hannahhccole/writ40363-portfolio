@@ -175,6 +175,9 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-top: 2rem;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -190,6 +193,8 @@ main {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -204,6 +209,12 @@ main {
 
 .project-card p {
     margin-bottom: 0.5rem;
+}
+
+.project-card video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .contact-container {
