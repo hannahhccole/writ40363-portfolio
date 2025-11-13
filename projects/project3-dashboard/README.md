@@ -1,31 +1,61 @@
 # Project 3: Personal Data Dashboard
 
-**Status:** Ready to Start
-**Start Date:** After Project 2 Consolidation
+A responsive personal dashboard featuring weather, daily quotes, and task management.
 
-## About This Project
+## Features
 
-This folder is for your Project 3 work, where you'll build a personal dashboard with multiple interactive widgets using fetch() and localStorage.
+- **Weather Widget**: Displays current weather conditions
+- **Daily Quotes**: Random inspirational quotes with refresh button
+- **Task Manager**: Add, complete, and delete personal tasks
+- **Dark/Light Theme**: Toggle between themes with persistence
+- **Responsive Design**: Works on mobile, tablet, and desktop
+- **Data Persistence**: Tasks and theme preferences saved locally
 
-## Widgets You'll Build
+## Technologies Used
 
-- **Weather Widget** - Display current weather from JSON data
-- **Daily Quotes** - Random inspirational quotes with refresh button
-- **Personal Tasks** - To-do list with localStorage persistence
-- **Theme Toggle** - Switch between light and dark modes
+- HTML5
+- CSS3 (Grid, Flexbox, Custom Properties)
+- JavaScript (ES6+)
+- fetch() API
+- localStorage
 
-## What You'll Learn
+## Live Demo
 
-- fetch() API for loading external JSON data
-- Combining fetch() with localStorage
-- Asynchronous JavaScript with promises
-- Multiple data sources and integration
-- Theme systems with CSS custom properties
+🔗 [View Live Dashboard](https://hannahhccole.github.io/writ40363-portfolio/)
 
-## Getting Started
+## Setup
 
-Complete LAB16 to begin building your weather widget. Instructions will be provided in class.
+1. Clone the repository
+2. Open `index.html` in a web browser (use Live Server for development)
+3. Customize `data/weather.json` and `data/quotes.json` with your own data
 
----
+## Project Structure
 
-*This placeholder was created during your portfolio consolidation process.*
+\```
+project3-dashboard/
+├── index.html          # Main HTML file
+├── css/
+│   └── styles.css      # All styles including themes
+├── js/
+│   └── app.js          # All JavaScript functionality
+├── data/
+│   ├── weather.json    # Weather data
+│   └── quotes.json     # Quotes collection
+└── README.md           # This file
+\```
+
+## Future Enhancements
+
+- Real weather API integration
+- Quote categories and filtering
+- Task categories and priorities
+- Export/import tasks feature
+- Additional widgets
+
+## Author
+
+[Hannah Cole]
+
+## License
+
+MIT License
