@@ -152,6 +152,14 @@ function setupQuotesButton() {
 // Call setupQuotesButton after DOM is loaded
 setupQuotesButton();
 
+// Filter function:
+function filterQuotesByCategory(category) {
+  if (category === 'all') {
+    return allQuotes;
+  }
+  return allQuotes.filter(quote => quote.category === category);
+}
+
 // ========================================
 // TASKS WIDGET (from LAB18)
 // ========================================
@@ -178,6 +186,17 @@ function displayTasks() {
   const tasks = loadTasks();
   const tasksList = document.getElementById('tasks-list');
 
+// Sort tasks: overdue first, then by due date, then no due date
+tasks.sort((a, b) => {
+  // Tasks without due dates go to the end
+  if (!a.dueDate && !b.dueDate) return 0;
+  if (!a.dueDate) return 1;
+  if (!b.dueDate) return -1;
+  
+  // Compare due dates
+  return new Date(a.dueDate) - new Date(b.dueDate);
+});
+
   // If no tasks, show message
   if (tasks.length === 0) {
     tasksList.innerHTML = `
@@ -195,7 +214,8 @@ function displayTasks() {
   // Display each task
   tasks.forEach((task, index) => {
     const taskItem = document.createElement('div');
-    taskItem.className = `task-item ${task.completed ? 'completed' : ''}`;
+    const overdueClass = (isOverdue(task.dueDate) && !task.completed) ? 'overdue' : '';
+    taskItem.className = `task-item ${task.completed ? 'completed' : ''} ${overdueClass}`;
 
     // Create checkbox
     const checkbox = document.createElement('input');
@@ -206,7 +226,13 @@ function displayTasks() {
     // Create task text
     const taskText = document.createElement('span');
     taskText.className = 'task-text';
-    taskText.textContent = task.text;
+    
+    if (task.dueDate) {
+      const formattedDate = new Date(task.dueDate).toLocaleDateString();
+      taskText.textContent = `${task.text} (Due: ${formattedDate})`;
+    } else {
+      taskText.textContent = task.text;
+    } 
 
     // Create delete button
     const deleteBtn = document.createElement('button');
@@ -226,12 +252,13 @@ function displayTasks() {
 }
 
 // Function to add a new task
-function addTask(taskText) {
+function addTask(taskText, dueDate = null) {
   const tasks = loadTasks();
 
   const newTask = {
     text: taskText,
     completed: false,
+    dueDate: dueDate,
     id: Date.now() // Unique ID using timestamp
   };
 
@@ -246,16 +273,23 @@ function addTask(taskText) {
 function setupTaskForm() {
   const taskForm = document.getElementById('task-form');
   const taskInput = document.getElementById('task-input');
+  const dueDateInput = document.getElementById('due-date-input');
 
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent page reload
 
     const taskText = taskInput.value.trim();
+    const dueDate = dueDateInput.value;
 
     if (taskText) {
-      addTask(taskText);
+      addTask(taskText, dueDate);
       taskInput.value = ''; // Clear input
+      dueDateInput.value = ''; // Clear due date input
       taskInput.focus(); // Focus back on input
+    }
+
+    if (dueDateInput) {
+      dueDateInput.value = ''; // Clear due date input
     }
   });
 }
@@ -358,3 +392,16 @@ function setupThemeToggle() {
 // Call these when page loads
 initializeTheme();
 setupThemeToggle();
+
+// ADD THIS NEW FUNCTION:
+function isOverdue(dueDate) {
+  if (!dueDate) return false;
+  
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate comparison
+  
+  const due = new Date(dueDate);
+  due.setHours(0, 0, 0, 0);
+  
+  return due < today;
+}
