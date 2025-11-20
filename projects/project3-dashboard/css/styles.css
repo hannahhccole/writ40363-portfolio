@@ -108,6 +108,7 @@ header {
 
 header h1 {
     color: var(--color-text-dark);
+    margin-bottom: 12px;
 }
 
 .header-content {
