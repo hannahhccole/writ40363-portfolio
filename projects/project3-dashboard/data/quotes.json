@@ -1,102 +1,82 @@
 [
   {
     "text": "The only way to do great work is to love what you do.",
-    "author": "Steve Jobs",
-    "category": "inspiration"
+    "author": "Steve Jobs"
   },
   {
     "text": "Innovation distinguishes between a leader and a follower.",
-    "author": "Steve Jobs",
-    "category": "inspiration"
+    "author": "Steve Jobs"
   },
   {
     "text": "First, solve the problem. Then, write the code.",
-    "author": "John Johnson",
-    "category": "coding"
+    "author": "John Johnson"
   },
   {
     "text": "Code is like humor. When you have to explain it, it's bad.",
-    "author": "Cory House",
-    "category": "coding"
+    "author": "Cory House"
   },
   {
     "text": "Make it work, make it right, make it fast.",
-    "author": "Kent Beck",
-    "category": "inspiration"
+    "author": "Kent Beck"
   },
   {
     "text": "The best error message is the one that never shows up.",
-    "author": "Thomas Fuchs",
-    "category": "coding"
+    "author": "Thomas Fuchs"
   },
   {
     "text": "Simplicity is the soul of efficiency.",
-    "author": "Austin Freeman",
-    "category": "inspiration"
+    "author": "Austin Freeman"
   },
   {
     "text": "Before software can be reusable it first has to be usable.",
-    "author": "Ralph Johnson",
-    "category": "coding"
+    "author": "Ralph Johnson"
   },
   {
     "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
-    "author": "Harold Abelson",
-    "category": "coding"
+    "author": "Harold Abelson"
   },
   {
     "text": "The most damaging phrase in the language is: 'We've always done it this way.'",
-    "author": "Grace Hopper",
-    "category": "inspiration"
+    "author": "Grace Hopper"
   },
   {
     "text": "I may not be there yet, but I'm closer than I was yesterday.",
-    "author": "Misty Copeland",
-    "category": "inspiration"
+    "author": "Misty Copeland"
   },
   {
     "text": "You've gotta dance like there's nobody watching, Love like you'll never be hurt, Sing like there's nobody listening, And live like it's heaven on earth.",
-    "author": "Willaim W. Purkey",
-    "category": "inspiration"
+    "author": "Willaim W. Purkey"
   },
   {
     "text": "Do not go where the path may lead, go instead where there is no path and leave a trail.", 
-    "author": "Ralph Waldo Emerson",
-    "category": "inspiration"
+    "author": "Ralph Waldo Emerson"
   },
   {
     "text": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
-    "author": "Winston S. Churchill",
-    "category": "inspiration"
+    "author": "Winston S. Churchill"
   },
   {
     "text": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
-    "author": "Ralph Waldo Emerson",
-    "category": "inspiration"
+    "author": "Ralph Waldo Emerson"
   },
   {
     "text": "Believe you can and you're halfway there.",
-    "author": "Theodore Roosevelt",
-    "category": "inspiration"
-    },
-{
-    "text": "Save your tears for your pillow.",
-    "author": "Abby Lee Miller",
-    "category":"funny"
+    "author": "Theodore Roosevelt"
   },
-    {
-        "text": "Those legs are about as straight as Elton John",
-        "author": "Abby Lee Miller",
-        "category": "funny"
-    },
-    {
-        "text": "Mom's better have my money.",
-        "author": "Abby Lee Miller",
-        "category": "funny"
-    },
-    {
-        "text": "You're skinny, you're blonde, you're pretty. And you think everyone at school doesn't hate you? Grow up.",
-        "author": "Abby Lee Miller",
-        "category": "funny"
-    }
+  {
+    "text": "Save your tears for your pillow.",
+    "author": "Abby Lee Miller"
+  },
+  {
+    "text": "Those legs are about as straight as Elton John",
+    "author": "Abby Lee Miller"
+  },
+  {
+    "text": "Mom's better have my money.",
+    "author": "Abby Lee Miller"
+  },
+  {
+    "text": "You're skinny, you're blonde, you're pretty. And you think everyone at school doesn't hate you? Grow up.",
+    "author": "Abby Lee Miller"
+  }
 ]

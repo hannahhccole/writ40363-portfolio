@@ -152,14 +152,6 @@ function setupQuotesButton() {
 // Call setupQuotesButton after DOM is loaded
 setupQuotesButton();
 
-// Filter function:
-function filterQuotesByCategory(category) {
-  if (category === 'all') {
-    return allQuotes;
-  }
-  return allQuotes.filter(quote => quote.category === category);
-}
-
 // ========================================
 // TASKS WIDGET (from LAB18)
 // ========================================
