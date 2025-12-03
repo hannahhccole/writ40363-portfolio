@@ -14,6 +14,15 @@
     --light-grey: #E8E4DB;
     --border: #CCC5B5;
     --shadow: rgba(0, 0, 0, 0.15);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 32px;
+    --space-xl: 48px;
 }
 
 /* Reset & Base Styles */
@@ -24,7 +33,7 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Lato', 'Georgia', sans-serif; /* Cleaner body text */
     background: linear-gradient(135deg, var(--cream) 0%, var(--light-grey) 100%);
     color: var(--charcoal);
     line-height: 1.6;
@@ -43,7 +52,7 @@ body {
 header {
     text-align: center;
     padding: 30px 20px;
-    background: var(--burgundy);
+    background: linear-gradient(135deg, var(--burgundy) 0%, var(--deep-red) 100%);
     color: var(--cream);
     border-bottom: 4px solid var(--gold);
     box-shadow: 0 4px 8px var(--shadow);
@@ -51,6 +60,7 @@ header {
 }
 
 header h1 {
+    font-family: 'Playfair Display', 'Georgia', serif; /* Elegant headers */
     font-size: 2.5rem;
     font-weight: normal;
     letter-spacing: 2px;
@@ -86,9 +96,10 @@ header h1 {
    ============================================ */
 .sidebar {
     background: white;
-    border: 2px solid var(--border);
+    border: 1px solid var(--border); /* Reduce from 2px */
     padding: 20px;
     box-shadow: 0 2px 6px var(--shadow);
+    border-radius: 8px;
 }
 
 .sidebar-header {
@@ -101,6 +112,7 @@ header h1 {
 }
 
 .sidebar-header h2 {
+    font-family: 'Playfair Display', 'Georgia', serif; /* Elegant headers */
     font-size: 1.3rem;
     font-weight: normal;
     color: var(--burgundy);
@@ -126,9 +138,7 @@ header h1 {
 }
 
 .folder-item:hover {
-    background: white;
-    border-left-color: var(--gold);
-    transform: translateX(3px);
+    transform: translateX(3px) scale(1.01);
 }
 
 .folder-item.active {
@@ -196,10 +206,11 @@ header h1 {
    ============================================ */
 .main-panel {
     background: white;
-    border: 2px solid var(--border);
-    padding: 25px;
+    border: 1px solid var(--border); /* Reduce from 2px */
+    padding: 35px; /* Increase from 25px */
     box-shadow: 0 2px 6px var(--shadow);
     min-height: 500px;
+    border-radius: 8px;
 }
 
 .panel-header {
@@ -218,6 +229,7 @@ header h1 {
 }
 
 #current-folder-name {
+    font-family: 'Playfair Display', 'Georgia', serif; /* Elegant headers */
     font-size: 1.5rem;
     color: var(--burgundy);
     font-weight: normal;
@@ -249,6 +261,7 @@ header h1 {
     font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    border-radius: 4px;
 }
 
 .filter-btn:hover {
@@ -268,21 +281,21 @@ header h1 {
 .items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 24px; /* Increase from 20px */
 }
 
 .item-card {
     background: var(--cream);
-    border: 1px solid var(--border);
-    border-top: 4px solid var(--burgundy);
-    padding: 20px;
+    border: none; /* Remove side borders, keep top accent */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06); /* Subtle shadow instead */
+    padding: 24px; /* Increase from 20px */
     transition: all 0.3s ease;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 .item-card:hover {
-    box-shadow: 0 4px 12px var(--shadow);
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.02); /* More dramatic */
     border-top-color: var(--gold);
 }
 
@@ -409,19 +422,33 @@ header h1 {
     background: #6B0000;
 }
 
+.btn:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
 /* ============================================
    EMPTY STATE
    ============================================ */
 .empty-state {
-    text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
+    font-size: 1.2rem;
     color: var(--grey);
-    font-style: italic;
-    font-size: 1.1rem;
+    background: var(--cream);
+    border-radius: 8px;
+    border: 2px dashed var(--border);
+    text-align: center;
 }
 
 .empty-state.hidden {
     display: none;
+}
+
+.empty-state::before {
+    content: "🎭";
+    display: block;
+    font-size: 4rem;
+    margin-bottom: 20px;
 }
 
 /* ============================================
@@ -448,8 +475,12 @@ header h1 {
     background: white;
     width: 90%;
     max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
     border: 3px solid var(--burgundy);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-xl);
+    border-radius: 8px;
+    overflow: hidden; /* Keeps header border-radius clean */
 }
 
 .modal-header {
@@ -611,3 +642,5 @@ textarea {
 .mb-2 {
     margin-bottom: 20px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;600&display=swap');

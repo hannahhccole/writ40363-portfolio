@@ -4,12 +4,33 @@
 // ============================================
 
 // ============================================
+// CONSTANTS
+// ============================================
+const CONFIG = {
+    DEFAULT_FOLDER_NAME: 'My Repertoire',
+    DEFAULT_FOLDER_COLOR: '#3b82f6',
+    STORAGE_KEYS: {
+        folders: 'folders',
+        items: 'items'
+    },
+    ITEM_TYPES: {
+        song: 'songs',
+        monologue: 'monologues'
+    },
+    FILTERS: {
+        all: 'all',
+        songs: 'songs',
+        monologues: 'monologues'
+    }
+};
+
+// ============================================
 // STATE MANAGEMENT
 // ============================================
-let folders = JSON.parse(localStorage.getItem('folders')) || [];
-let items = JSON.parse(localStorage.getItem('items')) || [];
+let folders = JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEYS.folders)) || [];
+let items = JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEYS.items)) || [];
 let currentFolderId = null;
-let currentFilter = 'all';
+let currentFilter = CONFIG.FILTERS.all;
 let editingFolderId = null;
 let editingItemId = null;
 
@@ -58,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (folders.length === 0) {
         folders.push({
             id: generateId(),
-            name: 'My Repertoire',
-            color: '#3b82f6',
+            name: CONFIG.DEFAULT_FOLDER_NAME,
+            color: CONFIG.DEFAULT_FOLDER_COLOR,
             createdAt: new Date().toISOString()
         });
         saveFolders();
@@ -80,6 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // FOLDER FUNCTIONS
 // ============================================
 
+/**
+ * Renders all folders in the sidebar with item counts and active states
+ * Updates the DOM with folder list including edit/delete buttons
+ */
 function renderFolders() {
     folderList.innerHTML = '';
     
@@ -131,13 +156,10 @@ function renderFolders() {
     });
 }
 
-function openAddFolderModal() {
-    editingFolderId = null;
-    folderModalTitle.textContent = 'Add Folder';
-    folderForm.reset();
-    folderModal.classList.add('active');
-}
-
+/**
+ * Opens the edit folder modal with pre-filled data
+ * @param {string} folderId - The ID of the folder to edit
+ */
 function openEditFolderModal(folderId) {
     editingFolderId = folderId;
     const folder = folders.find(f => f.id === folderId);
@@ -326,6 +348,10 @@ function openEditItemModal(itemId) {
     }
 }
 
+/**
+ * Saves a new or existing item to localStorage
+ * @param {Event} e - Form submission event
+ */
 function saveItem(e) {
     e.preventDefault();
     
@@ -423,11 +449,26 @@ function generateId() {
 }
 
 function saveFolders() {
-    localStorage.setItem('folders', JSON.stringify(folders));
+    try {
+        localStorage.setItem('folders', JSON.stringify(folders));
+    } catch (error) {
+        console.error('Failed to save folders:', error);
+        alert('Unable to save data. Your storage may be full.');
+    }
 }
 
-function saveItems() {
-    localStorage.setItem('items', JSON.stringify(items));
+function loadData() {
+    try {
+        const foldersData = localStorage.getItem('folders');
+        const itemsData = localStorage.getItem('items');
+        
+        folders = foldersData ? JSON.parse(foldersData) : [];
+        items = itemsData ? JSON.parse(itemsData) : [];
+    } catch (error) {
+        console.error('Failed to load data:', error);
+        folders = [];
+        items = [];
+    }
 }
 
 // ============================================

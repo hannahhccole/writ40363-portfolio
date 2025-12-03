@@ -2,7 +2,7 @@
 
 **Course:** WRIT 40363 - Digital Communication & Design Arts  
 **Due Date:** December 10, 2025  
-**Developer:** [Your Name]
+**Developer:** Hannah Cole
 
 ## Project Overview
 
@@ -22,9 +22,17 @@ Upskilling means:
 
 ## Project Description
 
-[Describe your chosen web application here - what it does, who it's for, and why you chose to build it]
+The **Repertoire Organizer** is a web application designed to help theatre performers and musical theatre students organize and manage their performance repertoire. Users can create custom folders to categorize their songs and monologues, making it easy to track audition material, class assignments, or performance pieces.
+
+**What it does:** The app allows users to add, edit, and delete both folders and individual repertoire items. Each item can include details like title, type (song or monologue), artist/composer, show/source, and personal notes. Users can filter their collection by category and view items organized within their chosen folders.
+
+**Who it's for:** This application is designed for theatre students, actors, and performers who need a simple, organized way to track their growing repertoire without the complexity of spreadsheets or paper lists.
+
+**Why I chose to build it:** As a theatre student myself, I often struggle to remember which pieces I've prepared and where I've used them. I wanted to create a practical tool that I could actually use while also challenging myself to implement features like localStorage for data persistence, dynamic DOM manipulation, and modal-based user interfaces—all techniques that build upon what I learned in Projects 1-3.
 
 ## Technologies Used
+- VS Code
+- GitHub
 
 ### Core Technologies
 - HTML5
@@ -32,10 +40,11 @@ Upskilling means:
 - JavaScript (ES6+)
 
 ### APIs & Libraries
-[List any external APIs or libraries you're using]
+- N/A
 
 ### AI Tools
-[List which AI assistants you used - Claude, ChatGPT, GitHub Copilot, etc.]
+- ChatGPT
+- Copilot
 
 ## Technical Requirements Demonstrated
 
@@ -71,7 +80,14 @@ This project demonstrates at least 3 upskilled techniques:
 
 ## Features
 
-[List your application's main features]
+- **Folder Management** - Create, edit, and delete custom folders with color-coding
+- **Item Organization** - Add songs and monologues with detailed metadata (title, artist, show, notes)
+- **Category Filtering** - Filter view by all items, songs only, or monologues only
+- **Data Persistence** - All data automatically saved to browser's localStorage
+- **Edit Functionality** - Update existing folders and items at any time
+- **Visual Feedback** - Hover effects, active states, and item counts for better UX
+- **Responsive Design** - Works on desktop and mobile devices
+- **Modal Interface** - Clean, focused forms for adding and editing content
 
 ### Minimum Viable Product (MVP)
 [Describe the core functionality that makes your app work]
