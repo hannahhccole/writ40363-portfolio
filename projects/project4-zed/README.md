@@ -28,16 +28,16 @@ The **Repertoire Organizer** is a web application designed to help theatre perfo
 
 **Who it's for:** This application is designed for theatre students, actors, and performers who need a simple, organized way to track their growing repertoire without the complexity of spreadsheets or paper lists.
 
-**Why I chose to build it:** As a theatre student myself, I often struggle to remember which pieces I've prepared and where I've used them. I wanted to create a practical tool that I could actually use while also challenging myself to implement features like localStorage for data persistence, dynamic DOM manipulation, and modal-based user interfaces—all techniques that build upon what I learned in Projects 1-3.
+**Why I chose to build it:** As a theatre student, I often struggle to remember which pieces I've prepared and where I've used them. I wanted to create a practical tool that I could actually use in my day to day life.
 
 ## Technologies Used
 - VS Code
 - GitHub
 
 ### Core Technologies
-- HTML5
-- CSS3
-- JavaScript (ES6+)
+- HTML
+- CSS
+- JavaScript
 
 ### APIs & Libraries
 - N/A
@@ -162,27 +162,21 @@ project4-zed/
 - [ ] Integrate into portfolio
 - [ ] Final testing
 
-## Live Demo
-
-[Add link to deployed application once live]
-
 ## Credits & Acknowledgments
 
 ### AI Tools Used
-[List specific AI tools and how they helped]
+1. ChatGPT helped me in the early brainstorming stage. I gave it the instructions for the project and said I wanted to create something that could be useful to me. Since it knows from previous conversations that I am a theatre major and am often looking for new material, it suggested a repertoire organizer.
+2. Copilot helped me write the code for this project as well as helped me fix problems when they arose. I also used it to explain any new coding features it added when I didn't understand what it was doing. 
 
 ### External Resources
-[List any tutorials, documentation, or other resources you used]
-
-### Inspiration
-[Credit any inspiration or similar projects]
+N/A
 
 ## Learning Goals
 
 Through this project, I aim to:
-1. [Specific skill or technique you want to learn]
-2. [Another learning goal]
-3. [Another learning goal]
+1. Create CSS with a more unique design/vibe than my other projects
+2. Learn a new JavaScript concept
+3. Be able to understand why a problem is occurring if problems arise
 
 ## License
 
