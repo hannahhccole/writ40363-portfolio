@@ -34,47 +34,53 @@ let currentFilter = CONFIG.FILTERS.all;
 let editingFolderId = null;
 let editingItemId = null;
 
-// ============================================
-// DOM ELEMENTS
-// ============================================
-const folderList = document.getElementById('folder-list');
-const itemsContainer = document.getElementById('items-container');
-const emptyState = document.getElementById('empty-state');
-const currentFolderName = document.getElementById('current-folder-name');
-const currentCategory = document.getElementById('current-category');
-
-// Modals
-const folderModal = document.getElementById('folder-modal');
-const itemModal = document.getElementById('item-modal');
-
-// Folder Modal Elements
-const addFolderBtn = document.getElementById('add-folder-btn');
-const closeFolderModalBtn = document.getElementById('close-folder-modal');
-const cancelFolderBtn = document.getElementById('cancel-folder-btn');
-const folderForm = document.getElementById('folder-form');
-const folderModalTitle = document.getElementById('folder-modal-title');
-const folderNameInput = document.getElementById('folder-name');
-
-// Item Modal Elements
-const addItemBtn = document.getElementById('add-item-btn');
-const closeItemModalBtn = document.getElementById('close-item-modal');
-const cancelItemBtn = document.getElementById('cancel-item-btn');
-const itemForm = document.getElementById('item-form');
-const itemModalTitle = document.getElementById('item-modal-title');
-const itemTitleInput = document.getElementById('item-title');
-const itemTypeSelect = document.getElementById('item-type');
-const itemArtistInput = document.getElementById('item-artist');
-const itemShowInput = document.getElementById('item-show');
-const itemFolderSelect = document.getElementById('item-folder');
-const itemNotesInput = document.getElementById('item-notes');
-
-// Filter Buttons
-const filterButtons = document.querySelectorAll('.filter-btn');
+// DOM Elements (will be initialized after DOM loads)
+let folderList, itemsContainer, emptyState, currentFolderName, currentCategory;
+let folderModal, itemModal;
+let addFolderBtn, closeFolderModalBtn, cancelFolderBtn, folderForm, folderModalTitle, folderNameInput;
+let addItemBtn, closeItemModalBtn, cancelItemBtn, itemForm, itemModalTitle;
+let itemTitleInput, itemTypeSelect, itemArtistInput, itemShowInput, itemFolderSelect, itemNotesInput;
+let filterButtons;
 
 // ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize DOM elements
+    folderList = document.getElementById('folder-list');
+    itemsContainer = document.getElementById('items-container');
+    emptyState = document.getElementById('empty-state');
+    currentFolderName = document.getElementById('current-folder-name');
+    currentCategory = document.getElementById('current-category');
+
+    // Modals
+    folderModal = document.getElementById('folder-modal');
+    itemModal = document.getElementById('item-modal');
+
+    // Folder Modal Elements
+    addFolderBtn = document.getElementById('add-folder-btn');
+    closeFolderModalBtn = document.getElementById('close-folder-modal');
+    cancelFolderBtn = document.getElementById('cancel-folder-btn');
+    folderForm = document.getElementById('folder-form');
+    folderModalTitle = document.getElementById('folder-modal-title');
+    folderNameInput = document.getElementById('folder-name');
+
+    // Item Modal Elements
+    addItemBtn = document.getElementById('add-item-btn');
+    closeItemModalBtn = document.getElementById('close-item-modal');
+    cancelItemBtn = document.getElementById('cancel-item-btn');
+    itemForm = document.getElementById('item-form');
+    itemModalTitle = document.getElementById('item-modal-title');
+    itemTitleInput = document.getElementById('item-title');
+    itemTypeSelect = document.getElementById('item-type');
+    itemArtistInput = document.getElementById('item-artist');
+    itemShowInput = document.getElementById('item-show');
+    itemFolderSelect = document.getElementById('item-folder');
+    itemNotesInput = document.getElementById('item-notes');
+
+    // Filter Buttons
+    filterButtons = document.querySelectorAll('.filter-btn');
+    
     // Create default folder if none exist
     if (folders.length === 0) {
         folders.push({
@@ -95,6 +101,40 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFolders();
         renderItems();
     }
+
+    // ============================================
+    // EVENT LISTENERS
+    // ============================================
+
+    // Folder Modal
+    addFolderBtn.addEventListener('click', openAddFolderModal);
+    closeFolderModalBtn.addEventListener('click', closeFolderModal);
+    cancelFolderBtn.addEventListener('click', closeFolderModal);
+    folderForm.addEventListener('submit', saveFolder);
+
+    // Item Modal
+    addItemBtn.addEventListener('click', openAddItemModal);
+    closeItemModalBtn.addEventListener('click', closeItemModal);
+    cancelItemBtn.addEventListener('click', closeItemModal);
+    itemForm.addEventListener('submit', saveItem);
+
+    // Filter Buttons
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => setFilter(btn.dataset.category));
+    });
+
+    // Close modals when clicking outside
+    folderModal.addEventListener('click', (e) => {
+        if (e.target === folderModal) {
+            closeFolderModal();
+        }
+    });
+
+    itemModal.addEventListener('click', (e) => {
+        if (e.target === itemModal) {
+            closeItemModal();
+        }
+    });
 });
 
 // ============================================
@@ -154,6 +194,13 @@ function renderFolders() {
             deleteFolder(btn.dataset.id);
         });
     });
+}
+
+function openAddFolderModal() {
+    editingFolderId = null;
+    folderModalTitle.textContent = 'Add Folder';
+    folderForm.reset();
+    folderModal.classList.add('active');
 }
 
 /**
@@ -457,6 +504,15 @@ function saveFolders() {
     }
 }
 
+function saveItems() {
+    try {
+        localStorage.setItem('items', JSON.stringify(items));
+    } catch (error) {
+        console.error('Failed to save items:', error);
+        alert('Unable to save data. Your storage may be full.');
+    }
+}
+
 function loadData() {
     try {
         const foldersData = localStorage.getItem('folders');
@@ -470,37 +526,3 @@ function loadData() {
         items = [];
     }
 }
-
-// ============================================
-// EVENT LISTENERS
-// ============================================
-
-// Folder Modal
-addFolderBtn.addEventListener('click', openAddFolderModal);
-closeFolderModalBtn.addEventListener('click', closeFolderModal);
-cancelFolderBtn.addEventListener('click', closeFolderModal);
-folderForm.addEventListener('submit', saveFolder);
-
-// Item Modal
-addItemBtn.addEventListener('click', openAddItemModal);
-closeItemModalBtn.addEventListener('click', closeItemModal);
-cancelItemBtn.addEventListener('click', closeItemModal);
-itemForm.addEventListener('submit', saveItem);
-
-// Filter Buttons
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => setFilter(btn.dataset.category));
-});
-
-// Close modals when clicking outside
-folderModal.addEventListener('click', (e) => {
-    if (e.target === folderModal) {
-        closeFolderModal();
-    }
-});
-
-itemModal.addEventListener('click', (e) => {
-    if (e.target === itemModal) {
-        closeItemModal();
-    }
-});

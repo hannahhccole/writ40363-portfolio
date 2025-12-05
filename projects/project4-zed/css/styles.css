@@ -475,12 +475,10 @@ header h1 {
     background: white;
     width: 90%;
     max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto;
+    max-height: 90vh;        /* ADD THIS - limits height to 90% of viewport */
+    overflow-y: auto;        /* ADD THIS - enables vertical scrolling */
     border: 3px solid var(--burgundy);
-    box-shadow: var(--shadow-xl);
-    border-radius: 8px;
-    overflow: hidden; /* Keeps header border-radius clean */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .modal-header {
