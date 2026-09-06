@@ -8,7 +8,7 @@
 
 This repository contains my web development projects from WRIT 40363. The main portfolio site showcases my work and growth as a web developer.
 
-**Live Portfolio:** [https://hannahhccole.github.io/writ40363-portfolio-hannahhccole/](https://hannahhccole.github.io/writ40363-portfolio-hannahhccole/)
+**Live Portfolio:** [https://hannahhccole.github.io/writ40363-portfolio/](https://hannahhccole.github.io/writ40363-portfolio/)
 
 ## Repository Structure
 - index.html 
