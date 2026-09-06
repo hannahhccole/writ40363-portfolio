@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Voces&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&display=swap');
 
 :root {
  --primary-color: #1e40af;
@@ -22,9 +22,10 @@
     }
 
 body {
-   font-family: voces, -apple-system, sans-serif;
-    line-height: 1.6;
-
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
     color: var(--text-color);
     background-color: var(--background);
 }
@@ -289,8 +290,10 @@ p + p {
 }
 
 h1, h2, h3 {
-  font-family: 'Libre Baskerville', serif;
-  line-height: 1.2; 
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
