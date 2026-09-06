@@ -298,7 +298,7 @@ h1, h2, h3 {
 
 h1 {
     color: var(--heading-color); 
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2; 
@@ -313,7 +313,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: #4a5568; 
     margin-bottom: 0.6rem;
@@ -321,7 +321,7 @@ h3 {
 }
 
 p{
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
     color: #555; 
 }
